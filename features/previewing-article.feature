@@ -17,3 +17,8 @@ Feature: Previewing article
      When I press "Preview"
      Then I should see "Hello Behat!" in the preview area
       And I should see "BDD is fun" in the preview area
+
+  Scenario: Preview is not visible initially
+    Given I go to "/"
+      And I follow "Add article"
+     Then the preview area should not be visible

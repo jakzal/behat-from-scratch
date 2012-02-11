@@ -3,12 +3,14 @@
 {% block body %}
     <h1>Add article</h1>
 
-    <div class="preview">
-        <h2>{{ form.title.get('value') }}</h2>
-        <p>
-            {{ form.body.get('value') }}
-        </p>
-    </div>
+    {% if showPreview %}
+        <div class="preview">
+            <h2>{{ form.title.get('value') }}</h2>
+            <p>
+                {{ form.body.get('value') }}
+            </p>
+        </div>
+    {% endif %}
 
     <form action="{{ path('add_article') }}" method="POST">
         {{ form_widget(form) }}

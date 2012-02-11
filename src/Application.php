@@ -42,11 +42,17 @@ class Application extends Silex\Application
             ->add('body', 'textarea')
             ->getForm();
 
+        $showPreview = false;
+
         if ($this['request']->getMethod() == 'POST') {
             $form->bindRequest($this['request']);
+            $showPreview = true;
         }
 
-        return $this['twig']->render('addArticle.twig', array('form' => $form->createView()));
+        return $this['twig']->render('addArticle.twig', array(
+            'form' => $form->createView(),
+            'showPreview' => $showPreview
+        ));
     }
 
     /**

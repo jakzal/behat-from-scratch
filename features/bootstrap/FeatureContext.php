@@ -51,6 +51,14 @@ class FeatureContext extends MinkContext
     }
 
     /**
+     * @Then /^the preview area should not be visible$/
+     */
+    public function thePreviewAreaShouldNotBeVisible()
+    {
+        return new Then('I should not see a "div[class=\'preview\']" element');
+    }
+
+    /**
      * @param string $label
      *
      * @return null
