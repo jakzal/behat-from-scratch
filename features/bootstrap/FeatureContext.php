@@ -23,6 +23,20 @@ class FeatureContext extends MinkContext
     }
 
     /**
+     * @Given /^I visit "([^"]*)"$/
+     */
+    public function iVisit($page)
+    {
+        $pages = array('homepage' => '/', 'article form' => '/add-article');
+
+        if (array_key_exists($page, $pages)) {
+            $page = $pages[$page];
+        }
+
+        return new Then(sprintf('I go to "%s"', $page));
+    }
+
+    /**
      * @Then /^I should see "([^"]*)" input on the article form$/
      */
     public function iShouldSeeInputOnTheArticleForm($label)
