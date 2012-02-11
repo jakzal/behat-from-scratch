@@ -6,6 +6,14 @@
         "twig/twig":           "*",
         "symfony/twig-bridge": "*",
         "symfony/form":        "*",
-        "symfony/translation": "*"
+        "symfony/translation": "*",
+        "behat/behat":         "2.3.2",
+        "behat/mink":          "1.3.2"
+    },
+    "repositories": {
+        "behat/mink-deps": { "composer": { "url": "behat.org" } }
+    },
+    "config": {
+        "bin-dir": "bin/"
     }
 }

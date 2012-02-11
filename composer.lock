@@ -1,5 +1,5 @@
 {
-    "hash": "5dd47a78562f4ca46b265ae0262cfd19",
+    "hash": "e4d42623431468c02b18ed8d91acd4df",
     "packages": [
         {
             "package": "doctrine\/common",
@@ -68,6 +68,86 @@
         {
             "package": "symfony\/translation",
             "version": "2.1.0-dev"
+        },
+        {
+            "package": "kriswallsmith\/buzz",
+            "version": "master-dev"
+        },
+        {
+            "package": "behat\/sahi-client",
+            "version": "master-dev"
+        },
+        {
+            "package": "symfony\/process",
+            "version": "2.1.0-dev"
+        },
+        {
+            "package": "symfony\/finder",
+            "version": "2.1.0-dev"
+        },
+        {
+            "package": "symfony\/yaml",
+            "version": "2.1.0-dev"
+        },
+        {
+            "package": "symfony\/dependency-injection",
+            "version": "2.1.0-dev"
+        },
+        {
+            "package": "symfony\/config",
+            "version": "2.1.0-dev"
+        },
+        {
+            "package": "symfony\/console",
+            "version": "2.1.0-dev"
+        },
+        {
+            "package": "behat\/gherkin",
+            "version": "v2.0.2"
+        },
+        {
+            "package": "zendframework\/zend-registry",
+            "version": "2.0.0beta2"
+        },
+        {
+            "package": "zendframework\/zend-loader",
+            "version": "2.0.0beta2"
+        },
+        {
+            "package": "zendframework\/zend-stdlib",
+            "version": "2.0.0beta2"
+        },
+        {
+            "package": "zendframework\/zend-validator",
+            "version": "2.0.0beta2"
+        },
+        {
+            "package": "zendframework\/zend-http",
+            "version": "2.0.0beta2"
+        },
+        {
+            "package": "zendframework\/zend-uri",
+            "version": "2.0.0beta2"
+        },
+        {
+            "package": "fabpot\/goutte",
+            "version": "master-dev"
+        },
+        {
+            "package": "alexandresalome\/php-selenium",
+            "version": "master-dev"
+        },
+        {
+            "package": "facebook\/php-webdriver",
+            "version": "master-dev"
+        },
+        {
+            "package": "behat\/mink",
+            "version": "v1.3.2"
+        },
+        {
+            "package": "behat\/behat",
+            "version": "v2.3.2"
         }
     ]
 }
