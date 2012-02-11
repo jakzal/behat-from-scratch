@@ -42,6 +42,10 @@ class Application extends Silex\Application
             ->add('body', 'textarea')
             ->getForm();
 
+        if ($this['request']->getMethod() == 'POST') {
+            $form->bindRequest($this['request']);
+        }
+
         return $this['twig']->render('addArticle.twig', array('form' => $form->createView()));
     }
 

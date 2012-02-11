@@ -2,6 +2,7 @@
 
 use Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Context\TranslatedContextInterface,
+    Behat\Behat\Context\Step\Then,
     Behat\Behat\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
@@ -39,6 +40,14 @@ class FeatureContext extends MinkContext
         $xpath = sprintf('//form//label[text()="%s"]/following-sibling::textarea', $label);
 
         $this->assertXpathElementExists($xpath);
+    }
+
+    /**
+     * @Then /^I should see "([^"]*)" in the preview area$/
+     */
+    public function iShouldSeeInPreviewArea($text)
+    {
+        return new Then(sprintf('I should see "%s" in the "div[class=\'preview\']" element', $text));
     }
 
     /**
