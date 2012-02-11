@@ -1,0 +1,11 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <h1>Add article</h1>
+
+    <form action="{{ path('add_article') }}" method="POST">
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Preview" class="btn btn-primary" />
+    </form>
+{% endblock %}

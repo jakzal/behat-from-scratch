@@ -33,6 +33,19 @@ class Application extends Silex\Application
     }
 
     /**
+     * @retrn string
+     */
+    public function handleAddArticle()
+    {
+        $form = $this['form.factory']->createBuilder('form')
+            ->add('title', 'text')
+            ->add('body', 'textarea')
+            ->getForm();
+
+        return $this['twig']->render('addArticle.twig', array('form' => $form->createView()));
+    }
+
+    /**
      * @return null
      */
     private function registerServiceProviders()
@@ -50,6 +63,9 @@ class Application extends Silex\Application
      */
     private function registerRoutes()
     {
+        $this->match('/add-article', array($this, 'handleAddArticle'))
+            ->bind('add_article');
+
         $this->get('/', array($this, 'handleHomepage'));
     }
 }
