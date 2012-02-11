@@ -22,3 +22,11 @@ Feature: Previewing article
     Given I go to "/"
       And I follow "Add article"
      Then the preview area should not be visible
+
+  Scenario: Title and body are required
+    Given I go to "/"
+      And I follow "Add article"
+     When I press "Preview"
+     Then I should see "Article title is required"
+      And I should see "Article body is required"
+      And the preview area should not be visible

@@ -7,6 +7,9 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Collection;
+
 class Application extends Silex\Application
 {
     /**
@@ -37,7 +40,12 @@ class Application extends Silex\Application
      */
     public function handleAddArticle()
     {
-        $form = $this['form.factory']->createBuilder('form')
+        $options = array('validation_constraint' => new Collection(array(
+            'title' => new NotBlank(array('message' => 'Article title is required')),
+            'body'  => new NotBlank(array('message' => 'Article body is required'))
+        )));
+
+        $form = $this['form.factory']->createBuilder('form', array(), $options)
             ->add('title', 'text')
             ->add('body', 'textarea')
             ->getForm();
@@ -46,7 +54,7 @@ class Application extends Silex\Application
 
         if ($this['request']->getMethod() == 'POST') {
             $form->bindRequest($this['request']);
-            $showPreview = true;
+            $showPreview = $form->isValid();
         }
 
         return $this['twig']->render('addArticle.twig', array(
