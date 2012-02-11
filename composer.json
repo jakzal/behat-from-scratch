@@ -1,0 +1,11 @@
+{
+    "name": "behat-from-scratch",
+    "version": "1.0.0",
+    "require": {
+        "silex/silex":         "*",
+        "twig/twig":           "*",
+        "symfony/twig-bridge": "*",
+        "symfony/form":        "*",
+        "symfony/translation": "*"
+    }
+}
