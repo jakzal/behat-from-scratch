@@ -3,6 +3,12 @@
 {% block body %}
     <h1>Add article</h1>
 
+    <form action="{{ path('add_article') }}" method="POST" class="well">
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Preview" class="btn btn-primary" />
+    </form>
+
     {% if showPreview %}
         <div class="preview">
             <h2>{{ form.title.get('value') }}</h2>
@@ -11,10 +17,4 @@
             </p>
         </div>
     {% endif %}
-
-    <form action="{{ path('add_article') }}" method="POST">
-        {{ form_widget(form) }}
-
-        <input type="submit" value="Preview" class="btn btn-primary" />
-    </form>
 {% endblock %}
