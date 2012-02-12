@@ -28,6 +28,30 @@ class Application extends Silex\Application
     }
 
     /**
+     * @return null
+     */
+    private function registerServiceProviders()
+    {
+        $this->register(new UrlGeneratorServiceProvider());
+        $this->register(new FormServiceProvider());
+        $this->register(new ValidatorServiceProvider());
+        $this->register(new TranslationServiceProvider(),array('translator.messages' => array()));
+        $this->register(new TwigServiceProvider(), array('twig.path' => __DIR__.'/../templates'));
+        $this->register(new SymfonyBridgesServiceProvider());
+    }
+
+    /**
+     * @return null
+     */
+    private function registerRoutes()
+    {
+        $this->match('/add-article', array($this, 'handleAddArticle'))
+            ->bind('add_article');
+
+        $this->get('/', array($this, 'handleHomepage'));
+    }
+
+    /**
      * @return string
      */
     public function handleHomepage()
@@ -61,29 +85,5 @@ class Application extends Silex\Application
             'form' => $form->createView(),
             'showPreview' => $showPreview
         ));
-    }
-
-    /**
-     * @return null
-     */
-    private function registerServiceProviders()
-    {
-        $this->register(new UrlGeneratorServiceProvider());
-        $this->register(new FormServiceProvider());
-        $this->register(new ValidatorServiceProvider());
-        $this->register(new TranslationServiceProvider(),array('translator.messages' => array()));
-        $this->register(new TwigServiceProvider(), array('twig.path' => __DIR__.'/../templates'));
-        $this->register(new SymfonyBridgesServiceProvider());
-    }
-
-    /**
-     * @return null
-     */
-    private function registerRoutes()
-    {
-        $this->match('/add-article', array($this, 'handleAddArticle'))
-            ->bind('add_article');
-
-        $this->get('/', array($this, 'handleHomepage'));
     }
 }
