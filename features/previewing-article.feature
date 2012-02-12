@@ -23,6 +23,8 @@ Feature: Previewing article
 
   Scenario: Title and body are required
     Given I visit "article form"
+      And I fill in "          " for "Title"
+      And I fill in "          " for "Body"
      When I press "Preview"
      Then I should see "Article title is required"
       And I should see "Article body is required"
