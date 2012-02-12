@@ -1,14 +1,14 @@
 Behat from Scratch
 ==================
 
-Simple project created as an introduction to Behat on the [first London Behat Users meetup](http://www.meetup.com/London-BEHAT-PHPSpec-user-group-for-Developers-Testers/events/46923902/).
+Simple project created as an introduction to [Behat](http://behat.org/) on the [first London Behat Users meetup](http://www.meetup.com/London-BEHAT-PHPSpec-user-group-for-Developers-Testers/events/46923902/).
 
-It is based on the Silex micro-framework, uses Twig templates and Symfony's form component.
+It is based on the [Silex micro-framework](http://silex.sensiolabs.org/), uses [Twig](http://twig.sensiolabs.org/) templates and [Symfony](http://symfony.com/)'s form component.
 
 Installation
 ------------
 
-Download the composer:
+Download [the composer](http://packagist.org/about-composer):
 
 ```bash
 wget -nc http://getcomposer.org/composer.phar
@@ -20,11 +20,26 @@ Install the dependencies:
 php composer.phar install
 ```
 
-Configuration
+Running Behat
 -------------
 
-Configure your web server to use the project's web directory as a document root.
-Example configuration for apache (change paths and domain name):
+By default custom Silex session is used so there's no need for additional configuration.
+Behat will create a Silex application and simulate requests.
+
+All the project's scenarios can be run with:
+
+```bash
+./bin/behat
+```
+
+Composer created this symbolic link during the installation.
+
+Running in a browser
+--------------------
+
+To use session run in a browser (like goutte or selenium) you will have to change 
+`default_sesion` in `config/behat.yml` and configure a web server. 
+Example configuration for apache:
 
 ```
 <VirtualHost *:80>
@@ -42,16 +57,5 @@ Example configuration for apache (change paths and domain name):
 </VirtualHost>
 ```
 
-`base_url` in `config/behat.yml` needs to be changed accordingly.
-
-Running Behat
--------------
-
-While installing dependencies Behat will create a link to its binary in `bin/behat`.
-
-All the project's scenarios can be run with:
-
-```bash
-./bin/behat
-```
-
+Paths to source code and a domain name have to be updated. 
+Also `base_url` in `config/behat.yml` needs to be changed accordingly.
