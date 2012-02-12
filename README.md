@@ -48,12 +48,12 @@ Example configuration for apache:
     DocumentRoot /var/www/behat.dev/web
     DirectoryIndex index.php
 
-    Directory /var/www/behat.dev/web>
+    <Directory /var/www/behat.dev/web>
         Options FollowSymLinks
         AllowOverride All
         Order allow,deny
         allow from all
-    Directory>
+    </Directory>
 </VirtualHost>
 ```
 
