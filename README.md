@@ -1,6 +1,8 @@
 Behat from Scratch
 ==================
 
+[![Build Status](https://secure.travis-ci.org/jakzal/behat-from-scratch.png?branch=master)](http://travis-ci.org/jakzal/behat-from-scratch)
+
 Simple project created as an introduction to [Behat](http://behat.org/) on the [first London Behat Users meetup](http://www.meetup.com/London-BEHAT-PHPSpec-user-group-for-Developers-Testers/events/46923902/).
 
 It is based on the [Silex micro-framework](http://silex.sensiolabs.org/), uses [Twig](http://twig.sensiolabs.org/) templates and [Symfony](http://symfony.com/)'s form component.
