@@ -7,7 +7,7 @@ env:
   - BEHAT_PARAMS="formatter[name]=progress"
 
 before_script:
-  - wget -nc http://getcomposer.org/composer.phar
+  - curl -s http://getcomposer.org/installer | php
   - php composer.phar install
 
 script: php bin/behat
