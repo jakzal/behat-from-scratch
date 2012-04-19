@@ -1,153 +1,205 @@
 {
-    "hash": "e4d42623431468c02b18ed8d91acd4df",
+    "hash": "2578f790ef0312dd8d8db7c53a01be05",
     "packages": [
         {
-            "package": "doctrine\/common",
-            "version": "master-dev"
+            "package": "alexandresalome/php-selenium",
+            "version": "master-dev",
+            "source-reference": "master"
         },
         {
-            "package": "symfony\/locale",
-            "version": "2.1.0-dev"
+            "package": "behat/behat",
+            "version": "dev-master",
+            "source-reference": "v2.3.5"
         },
         {
-            "package": "symfony\/validator",
-            "version": "2.1.0-dev"
+            "package": "behat/gherkin",
+            "version": "v2.1.1"
         },
         {
-            "package": "symfony\/form",
-            "version": "2.1.0-dev"
+            "package": "behat/mink",
+            "version": "dev-master",
+            "source-reference": "v1.3.3"
         },
         {
-            "package": "symfony\/twig-bridge",
-            "version": "2.1.0-dev"
+            "package": "behat/sahi-client",
+            "version": "dev-master",
+            "source-reference": "v1.0.1"
         },
         {
-            "package": "twig\/twig",
-            "version": "1.7.0-dev"
+            "package": "doctrine/common",
+            "version": "2.2.x-dev",
+            "source-reference": "1e0aa60d109c630d19543d999f12e2852ef8f932"
         },
         {
-            "package": "symfony\/class-loader",
-            "version": "2.1.0-dev"
+            "package": "fabpot/goutte",
+            "version": "master-dev",
+            "source-reference": "master"
         },
         {
-            "package": "symfony\/css-selector",
-            "version": "2.1.0-dev"
+            "package": "facebook/php-webdriver",
+            "version": "master-dev",
+            "source-reference": "master"
         },
         {
-            "package": "symfony\/event-dispatcher",
-            "version": "2.1.0-dev"
+            "package": "kriswallsmith/buzz",
+            "version": "dev-master",
+            "source-reference": "83147864bfac8d47a56ac26b901b8f39ef078489"
         },
         {
-            "package": "symfony\/http-foundation",
-            "version": "2.1.0-dev"
+            "package": "pimple/pimple",
+            "version": "dev-master",
+            "source-reference": "4e5fc6a6d58a7d9ad1d1974726edc360d28b70ab"
         },
         {
-            "package": "symfony\/http-kernel",
-            "version": "2.1.0-dev"
+            "package": "silex/silex",
+            "version": "dev-master",
+            "source-reference": "c3fd34646a91279b7da716746a7cc9db93da8202"
         },
         {
-            "package": "symfony\/routing",
-            "version": "2.1.0-dev"
+            "package": "symfony/browser-kit",
+            "version": "dev-master",
+            "source-reference": "f91ab705dc8f4fdfdc5baad0082a1263d77e147e",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/dom-crawler",
-            "version": "2.1.0-dev"
+            "package": "symfony/class-loader",
+            "version": "dev-master",
+            "source-reference": "cd1550a4a6c0794b6b109af2db43fde6e18ee363",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/browser-kit",
-            "version": "2.1.0-dev"
+            "package": "symfony/config",
+            "version": "dev-master",
+            "source-reference": "94a0501a51791f845225186ad03ce586a7c73339",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "pimple\/pimple",
-            "version": "1.0.0-dev"
+            "package": "symfony/console",
+            "version": "dev-master",
+            "source-reference": "8e3c42aa976f18a9bfcb0694553e5f99def3309c",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "silex\/silex",
-            "version": "1.0.0-dev"
+            "package": "symfony/css-selector",
+            "version": "dev-master",
+            "source-reference": "dd695aadd80d8e6e726a7a050535c04325cefa02",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/translation",
-            "version": "2.1.0-dev"
+            "package": "symfony/dependency-injection",
+            "version": "dev-master",
+            "source-reference": "f5e5c32235fd687cf892abcb443e920fad7b4221",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "kriswallsmith\/buzz",
-            "version": "master-dev"
+            "package": "symfony/dom-crawler",
+            "version": "dev-master",
+            "source-reference": "9b4694da9a1239771468096c574d8309992a8454",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "behat\/sahi-client",
-            "version": "master-dev"
+            "package": "symfony/event-dispatcher",
+            "version": "dev-master",
+            "source-reference": "07e1d0174f3a0ec36bbe04b3850270df7a86271d",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/process",
-            "version": "2.1.0-dev"
+            "package": "symfony/finder",
+            "version": "dev-master",
+            "source-reference": "57ec7198a70e6c40e450ba66cc2f8ecab98746c8",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/finder",
-            "version": "2.1.0-dev"
+            "package": "symfony/form",
+            "version": "dev-master",
+            "source-reference": "8cdce8f12c9e223550d83cc8a8d420fbd7eb8055",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/yaml",
-            "version": "2.1.0-dev"
+            "package": "symfony/http-foundation",
+            "version": "dev-master",
+            "source-reference": "b9aceabb83f3d03fe451cdd867d987e863e7a25e",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/dependency-injection",
-            "version": "2.1.0-dev"
+            "package": "symfony/http-kernel",
+            "version": "dev-master",
+            "source-reference": "2048aa455abe5ca6089fab93fcb787742beb7e49",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/config",
-            "version": "2.1.0-dev"
+            "package": "symfony/locale",
+            "version": "dev-master",
+            "source-reference": "d84707d17c196e640019a8413f0764da46089a2d",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "symfony\/console",
-            "version": "2.1.0-dev"
+            "package": "symfony/process",
+            "version": "dev-master",
+            "source-reference": "2e4da8c8076744bafed97451bb1574c96cda0e68",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "behat\/gherkin",
-            "version": "v2.0.2"
+            "package": "symfony/routing",
+            "version": "dev-master",
+            "source-reference": "0811d83da31aacfe32a580b5db4287cae8f3d5a9",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "zendframework\/zend-registry",
-            "version": "2.0.0beta2"
+            "package": "symfony/translation",
+            "version": "dev-master",
+            "source-reference": "996c638a7bc7427290c140bec1fab62a0db1044c",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "zendframework\/zend-loader",
-            "version": "2.0.0beta2"
+            "package": "symfony/twig-bridge",
+            "version": "dev-master",
+            "source-reference": "b1301ae3412dba8d40074c1b72adfa1b55babbcd",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "zendframework\/zend-stdlib",
-            "version": "2.0.0beta2"
+            "package": "symfony/validator",
+            "version": "dev-master",
+            "source-reference": "ce994a5616b20f6ebf37d66a1a89bdd3af6b4ea2",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "zendframework\/zend-validator",
-            "version": "2.0.0beta2"
+            "package": "symfony/yaml",
+            "version": "dev-master",
+            "source-reference": "0647ee4ca69b60f9043256e89f8dbaa0cedd854c",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
-            "package": "zendframework\/zend-http",
-            "version": "2.0.0beta2"
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "037f86aa550737abf633e991f3606b9de5a69657",
+            "alias": "1.7.9999999.9999999-dev"
         },
         {
-            "package": "zendframework\/zend-uri",
-            "version": "2.0.0beta2"
+            "package": "zendframework/zend-http",
+            "version": "2.0.0beta3"
         },
         {
-            "package": "fabpot\/goutte",
-            "version": "master-dev"
+            "package": "zendframework/zend-loader",
+            "version": "2.0.0beta3"
         },
         {
-            "package": "alexandresalome\/php-selenium",
-            "version": "master-dev"
+            "package": "zendframework/zend-registry",
+            "version": "2.0.0beta3"
         },
         {
-            "package": "facebook\/php-webdriver",
-            "version": "master-dev"
+            "package": "zendframework/zend-stdlib",
+            "version": "2.0.0beta3"
         },
         {
-            "package": "behat\/mink",
-            "version": "v1.3.2"
+            "package": "zendframework/zend-uri",
+            "version": "2.0.0beta3"
         },
         {
-            "package": "behat\/behat",
-            "version": "v2.3.2"
+            "package": "zendframework/zend-validator",
+            "version": "2.0.0beta3"
         }
-    ]
+    ],
+    "packages-dev": null,
+    "aliases": []
 }

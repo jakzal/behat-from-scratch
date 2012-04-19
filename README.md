@@ -8,10 +8,10 @@ It is based on the [Silex micro-framework](http://silex.sensiolabs.org/), uses [
 Installation
 ------------
 
-Download [the composer](http://packagist.org/about-composer):
+Download [the composer](http://getcomposer.org/):
 
 ```bash
-wget -nc http://getcomposer.org/composer.phar
+curl -s http://getcomposer.org/installer | php
 ```
 
 Install the dependencies:
