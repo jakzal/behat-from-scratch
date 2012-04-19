@@ -10,4 +10,4 @@ before_script:
   - wget -nc http://getcomposer.org/composer.phar
   - php composer.phar install
 
-script: bin/behat
+script: php bin/behat
