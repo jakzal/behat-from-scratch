@@ -1,9 +1,14 @@
 <?php
 
-use Symfony\Component\HttpKernel\Client;
+namespace Acme\Behat\SilexExtension\HttpKernel;
+
+use Symfony\Component\HttpKernel\Client as BaseClient;
 use Silex\Application;
 
-class SilexClient extends Client
+/**
+ * @author Jakub Zalas <jakub@zalas.pl>
+ */
+class Client extends BaseClient
 {
     /**
      * @var \Silex\Application $application

@@ -3,9 +3,12 @@ Behat from Scratch
 
 [![Build Status](https://secure.travis-ci.org/jakzal/behat-from-scratch.png?branch=master)](http://travis-ci.org/jakzal/behat-from-scratch)
 
-Simple project created as an introduction to [Behat](http://behat.org/) on the [first London Behat Users meetup](http://www.meetup.com/London-BEHAT-PHPSpec-user-group-for-Developers-Testers/events/46923902/).
+Simple project created as an introduction to [Behat](http://behat.org/) on the
+[first London Behat Users meetup](http://www.meetup.com/London-BEHAT-PHPSpec-user-group-for-Developers-Testers/events/46923902/).
 
-It is based on the [Silex micro-framework](http://silex.sensiolabs.org/), uses [Twig](http://twig.sensiolabs.org/) templates and [Symfony](http://symfony.com/)'s form component.
+It is based on the [Silex micro-framework](http://silex.sensiolabs.org/), uses
+[Twig](http://twig.sensiolabs.org/) templates and [Symfony](http://symfony.com/)'s
+form component.
 
 Installation
 ------------
@@ -25,8 +28,8 @@ php composer.phar install
 Running Behat
 -------------
 
-By default custom Silex session is used so there's no need for additional configuration.
-Behat will create a Silex application and simulate requests.
+By default custom Silex session is used so there's no need for additional
+configuration. Behat will create a Silex application and simulate requests.
 
 All the project's scenarios can be run with:
 
@@ -39,8 +42,8 @@ Composer created this symbolic link during the installation.
 Running in a browser
 --------------------
 
-To use session run in a browser (like goutte or selenium) you will have to change 
-`default_sesion` in `config/behat.yml` and configure a web server. 
+To use session run in a browser (like selenium2) you will have to
+change `default_sesion` in `config/behat.yml` and configure a web server.
 Example configuration for apache:
 
 ```
@@ -59,5 +62,5 @@ Example configuration for apache:
 </VirtualHost>
 ```
 
-Paths to source code and a domain name have to be updated. 
+Paths to source code and a domain name have to be updated.
 Also `base_url` in `config/behat.yml` needs to be changed accordingly.

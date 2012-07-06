@@ -9,17 +9,20 @@
         "symfony/validator":   "2.1.*",
         "symfony/translation": "2.1.*",
 
-        "behat/behat":                  "*",
-        "behat/mink":                   "*",
-        "fabpot/goutte":                "*",
-        "alexandresalome/php-selenium": "*",
-        "facebook/php-webdriver":       "*",
-        "behat/sahi-client":            "*"
-    },
-    "repositories": {
-        "behat/mink-deps": { "type": "composer",  "url": "behat.org" }
+        "behat/behat":                  "*@stable",
+        "behat/mink-extension":         "*@stable",
+        "behat/mink-browserkit-driver": "*@stable",
+        "behat/mink-selenium-driver":   "*@stable",
+        "behat/mink-selenium2-driver":  "*@stable",
+        "behat/mink-sahi-driver":       "*@stable"
     },
     "config": {
         "bin-dir": "bin/"
-    }
+    },
+    "autoload": {
+        "psr-0": {
+            "Acme": "src/"
+        }
+    },
+    "minimum-stability": "dev"
 }

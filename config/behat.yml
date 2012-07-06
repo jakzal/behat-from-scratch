@@ -1,5 +1,0 @@
-default:
-  context:
-    parameters:
-      default_session: silex
-      base_url: http://behat.dev/

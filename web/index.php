@@ -1,7 +1,6 @@
 <?php
 
-include __DIR__.'/../vendor/.composer/autoload.php';
-require_once __DIR__.'/../src/Application.php';
+include __DIR__.'/../vendor/autoload.php';
 
-$application = new Application(false);
+$application = new \Acme\Application(true);
 $application->run();

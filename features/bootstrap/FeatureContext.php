@@ -6,7 +6,7 @@ use Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
-use Behat\Mink\Behat\Context\MinkContext,
+use Behat\MinkExtension\Context\MinkContext,
     Behat\Mink\Driver\GoutteDriver,
     Behat\Mink\Exception\ElementNotFoundException,
     Behat\Mink\Session;
@@ -21,17 +21,6 @@ class FeatureContext extends MinkContext
      */
     public function __construct(array $parameters)
     {
-        // Initialize your context here
-    }
-
-    /**
-     * @BeforeScenario
-     */
-    public function registerSilexSession()
-    {
-        $silexClient = new SilexClient(new Application(true));
-        $silexSession = new Session(new GoutteDriver($silexClient));
-        $this->getMink()->registerSession('silex', $silexSession);
     }
 
     /**

@@ -11,9 +11,9 @@
 
     {% if showPreview %}
         <div class="preview">
-            <h2>{{ form.title.get('value') }}</h2>
+            <h2>{{ form.vars.value.title }}</h2>
             <p>
-                {{ form.body.get('value') }}
+                {{ form.vars.value.body }}
             </p>
         </div>
     {% endif %}

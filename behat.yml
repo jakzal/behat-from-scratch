@@ -1,0 +1,12 @@
+default:
+  formatter:
+    name: pretty
+  extensions:
+    Acme\Behat\SilexExtension\Extension:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://behat.dev/'
+      default_session: silex
+      javascript_session: selenium2
+      selenium2:
+        wd_host: http://33.33.33.1:4444/wd/hub
+        browser: firefox

@@ -1,7 +1,9 @@
 <?php
 
+namespace Acme;
+
+use Silex\Application as SilexApplication;
 use Silex\Provider\FormServiceProvider;
-use Silex\Provider\SymfonyBridgesServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
@@ -10,7 +12,7 @@ use Silex\Provider\ValidatorServiceProvider;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Collection;
 
-class Application extends Silex\Application
+class Application extends SilexApplication
 {
     /**
      * @param boolean $debug
@@ -36,8 +38,7 @@ class Application extends Silex\Application
         $this->register(new FormServiceProvider());
         $this->register(new ValidatorServiceProvider());
         $this->register(new TranslationServiceProvider(),array('translator.messages' => array()));
-        $this->register(new TwigServiceProvider(), array('twig.path' => __DIR__.'/../templates'));
-        $this->register(new SymfonyBridgesServiceProvider());
+        $this->register(new TwigServiceProvider(), array('twig.path' => __DIR__.'/../../templates'));
     }
 
     /**
