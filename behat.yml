@@ -8,5 +8,5 @@ default:
       default_session: silex
       javascript_session: selenium2
       selenium2:
-        wd_host: http://33.33.33.1:4444/wd/hub
+        wd_host: http://127.0.0.1:4444/wd/hub
         browser: firefox
