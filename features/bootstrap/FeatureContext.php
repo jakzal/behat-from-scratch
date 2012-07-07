@@ -17,13 +17,6 @@ use Behat\MinkExtension\Context\MinkContext,
 class FeatureContext extends MinkContext
 {
     /**
-     * @param array $parameters context parameters (set them up through behat.yml)
-     */
-    public function __construct(array $parameters)
-    {
-    }
-
-    /**
      * @Given /^I visit "([^"]*)"$/
      */
     public function iVisit($page)
