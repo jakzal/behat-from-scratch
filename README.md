@@ -43,7 +43,7 @@ Running in a browser
 --------------------
 
 To use session run in a browser (like selenium2) you will have to
-change `default_sesion` in `config/behat.yml` and configure a web server.
+change `default_sesion` in `behat.yml` and configure a web server.
 Example configuration for apache:
 
 ```
@@ -63,4 +63,4 @@ Example configuration for apache:
 ```
 
 Paths to source code and a domain name have to be updated.
-Also `base_url` in `config/behat.yml` needs to be changed accordingly.
+Also `base_url` in `behat.yml` needs to be changed accordingly.
