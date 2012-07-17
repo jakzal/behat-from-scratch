@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Behat\Behat\Extension\ExtensionInterface;
 
 /**
- * Silex extension for Behat class.
+ * Silex extension for Behat.
  *
  * @author Jakub Zalas <jakub@zalas.pl>
  */

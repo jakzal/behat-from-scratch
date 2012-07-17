@@ -1,6 +1,27 @@
 default:
   formatter:
     name: pretty
+  context:
+    parameters:
+      database:
+        username: 'dev'
+        password: '123123'
+        dbname:   'behat'
+        host:     '127.0.0.1'
+        driver:   'pdo_mysql'
+      Phabric:
+        entities:
+          Article:
+            tableName: articles
+            primaryKey: id
+            nameCol: title
+            nameTransformations:
+              Title: title
+              Content: content
+              Modification time: updated_at
+            dataTransformations:
+              updated_at: TEXTTOMYSQLDATE
+
   extensions:
     Acme\Behat\SilexExtension\Extension:
     Behat\MinkExtension\Extension:
