@@ -20,6 +20,10 @@ class Extension implements ExtensionInterface
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/services'));
         $loader->load('core.xml');
+
+        if (isset($config['connection'])) {
+            $container->setParameter('doctrine.connection.settings', $config['connection']);
+        }
     }
 
     /**
@@ -29,6 +33,29 @@ class Extension implements ExtensionInterface
      */
     public function getConfig(ArrayNodeDefinition $builder)
     {
+        $builder->
+            children()->
+                arrayNode('connection')->
+                    isRequired()->
+                    children()->
+                        scalarNode('dbname')->
+                            isRequired()->
+                        end()->
+                        scalarNode('user')->
+                            isRequired()->
+                        end()->
+                        scalarNode('password')->
+                            isRequired()->
+                        end()->
+                        scalarNode('host')->
+                            defaultValue('127.0.0.1')->
+                        end()->
+                        scalarNode('driver')->
+                            defaultValue('pdo_mysql')->
+                        end()->
+                    end()->
+                end()->
+            end();
     }
 
     /**

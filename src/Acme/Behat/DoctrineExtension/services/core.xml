@@ -5,9 +5,9 @@
 
     <parameters>
         <parameter key="doctrine.connection.settings" type="collection">
-            <parameter key="dbname">behat</parameter>
-            <parameter key="user">dev</parameter>
-            <parameter key="password">123123</parameter>
+            <parameter key="dbname"></parameter>
+            <parameter key="user"></parameter>
+            <parameter key="password"></parameter>
             <parameter key="host">127.0.0.1</parameter>
             <parameter key="driver">pdo_mysql</parameter>
         </parameter>

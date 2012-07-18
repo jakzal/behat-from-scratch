@@ -1,18 +1,15 @@
 default:
   formatter:
     name: pretty
-  context:
-    parameters:
-      database:
-        username: 'dev'
-        password: '123123'
-        dbname:   'behat'
-        host:     '127.0.0.1'
-        driver:   'pdo_mysql'
-
   extensions:
     Acme\Behat\SilexExtension\Extension:
     Acme\Behat\DoctrineExtension\Extension:
+      connection:
+        dbname:   'behat'
+        user:     'dev'
+        password: '123123'
+        host:     '127.0.0.1'
+        driver:   'pdo_mysql'
     Behat\MinkExtension\Extension:
       base_url: 'http://behat.dev/'
       default_session: silex
