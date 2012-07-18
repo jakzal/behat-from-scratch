@@ -1,11 +1,13 @@
 <?php
 
+use Acme\Behat\DoctrineExtension\Context\DoctrineConnectionAwareInterface;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Exception\ExpectationException;
+use Doctrine\DBAL\Connection;
 
-class LatestArticlesContext extends RawMinkContext
+class LatestArticlesContext extends RawMinkContext implements DoctrineConnectionAwareInterface
 {
     /**
      * @var \Doctrine\DBAL\Connection $connection
@@ -13,19 +15,11 @@ class LatestArticlesContext extends RawMinkContext
     private $connection = null;
 
     /**
-     * @param array $parameters
-     *
-     * @return null
+     * @param \Doctrine\DBAL\Connection $connection
      */
-    public function __construct($parameters)
+    public function setConnection(Connection $connection)
     {
-        $this->connection = \Doctrine\DBAL\DriverManager::getConnection(array(
-            'dbname' => $parameters['database']['dbname'],
-            'user' => $parameters['database']['username'],
-            'password' => $parameters['database']['password'],
-            'host' => $parameters['database']['host'],
-            'driver' => $parameters['database']['driver'],
-        ));
+        $this->connection = $connection;
     }
 
     /**

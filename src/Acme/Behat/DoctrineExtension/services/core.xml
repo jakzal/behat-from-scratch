@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="doctrine.connection.settings" type="collection">
+            <parameter key="dbname">behat</parameter>
+            <parameter key="user">dev</parameter>
+            <parameter key="password">123123</parameter>
+            <parameter key="host">127.0.0.1</parameter>
+            <parameter key="driver">pdo_mysql</parameter>
+        </parameter>
+    </parameters>
+
+    <services>
+        <service id="doctrine.connection" class="Doctrine\DBAL\Connection"
+            factory-class="Doctrine\DBAL\DriverManager" factory-method="getConnection">
+            <argument>%doctrine.connection.settings%</argument>
+        </service>
+
+        <service id="doctrine.connection.initializer" class="Acme\Behat\DoctrineExtension\Context\Initializer\DoctrineConnectionInitializer">
+            <argument type="service" id="doctrine.connection" />
+
+            <tag name="behat.context.initializer" />
+        </service>
+    </services>
+</container>

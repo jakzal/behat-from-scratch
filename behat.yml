@@ -12,6 +12,7 @@ default:
 
   extensions:
     Acme\Behat\SilexExtension\Extension:
+    Acme\Behat\DoctrineExtension\Extension:
     Behat\MinkExtension\Extension:
       base_url: 'http://behat.dev/'
       default_session: silex
