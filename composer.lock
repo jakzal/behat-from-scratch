@@ -1,5 +1,5 @@
 {
-    "hash": "79186948d3827598f55fdd6e9676a5c9",
+    "hash": "00af07b113013616ccdbf4813d6e70c5",
     "packages": [
         {
             "package": "alexandresalome/php-selenium",
@@ -80,12 +80,6 @@
             "version": "dev-master",
             "source-reference": "d2cfa2f02f50abef65c238747c753a5f6786f6be",
             "commit-date": "1341139100"
-        },
-        {
-            "package": "silex/silex",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "silex/silex",

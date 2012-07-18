@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="phabric.connection.settings" type="collection">
+            <parameter key="user">dev</parameter>
+            <parameter key="password">123123</parameter>
+            <parameter key="dbname">behat</parameter>
+            <parameter key="host">127.0.0.1</parameter>
+            <parameter key="driver">pdo_mysql</parameter>
+        </parameter>
+        <parameter key="phabric.entities" type="collection" />
+    </parameters>
+
+    <services>
+
+        <service id="phabric.connection" class="Doctrine\BDAL\Connection"
+            factory-class="Doctrine\DBAL\DriverManager" factory-method="getConnection">
+            <argument>%phabric.connection.settings%</argument>
+        </service>
+
+        <service id="phabric.datasource" class="Phabric\Datasource\Doctrine">
+            <argument type="service" id="phabric.connection" />
+            <argument>%phabric.entities%</argument>
+        </service>
+
+        <service id="phabric" class="Phabric\Phabric">
+            <argument type="service" id="phabric.datasource" />
+
+            <call method="createEntitiesFromConfig">
+                <argument>%phabric.entities%</argument>
+            </call>
+        </service>
+
+        <service id="phabric.behat.phabric_extension.context.initializer" class="Phabric\Behat\PhabricExtension\Context\Initializer\PhabricAwareInitializer">
+            <argument type="service" id="phabric" />
+            <tag name="behat.context.initializer" />
+        </service>
+
+    </services>
+</container>

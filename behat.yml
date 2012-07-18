@@ -31,3 +31,15 @@ default:
       selenium2:
         wd_host: http://127.0.0.1:4444/wd/hub
         browser: firefox
+    Phabric\Behat\PhabricExtension\Extension:
+      entities:
+        Article:
+          tableName: articles
+          primaryKey: id
+          nameCol: title
+          nameTransformations:
+            Title: title
+            Content: content
+            Modification time: updated_at
+          dataTransformations:
+            updated_at: TEXTTOMYSQLDATE

@@ -4,8 +4,10 @@ use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Exception\ExpectationException;
+use Phabric\Phabric;
+use Phabric\Behat\PhabricExtension\Context\PhabricAwareInterface;
 
-class LatestArticlesContext extends RawMinkContext
+class LatestArticlesContext extends RawMinkContext implements PhabricAwareInterface
 {
     /**
      * @var \Phabric\Phabric $phabric
@@ -16,6 +18,11 @@ class LatestArticlesContext extends RawMinkContext
      * @var \Doctrine\DBAL\Connection $connection
      */
     private $connection = null;
+
+    public function setPhabric(Phabric $phabric)
+    {
+        $this->phabric = $phabric;
+    }
 
     /**
      * @param array $parameters
@@ -32,20 +39,20 @@ class LatestArticlesContext extends RawMinkContext
             'driver' => $parameters['database']['driver'],
         ));
 
-        $dataSource = new \Phabric\Datasource\Doctrine(
-            $this->connection,
-            $parameters['Phabric']['entities']
-        );
+        //$dataSource = new \Phabric\Datasource\Doctrine(
+            //$this->connection,
+            //$parameters['Phabric']['entities']
+        //);
 
-        $this->phabric = new \Phabric\Phabric($dataSource);
-        $this->phabric->addDataTransformation(
-            'TEXTTOMYSQLDATE', function($date) {
-                $date = new \DateTime($date);
+        //$this->phabric = new \Phabric\Phabric($dataSource);
+        //$this->phabric->addDataTransformation(
+            //'TEXTTOMYSQLDATE', function($date) {
+                //$date = new \DateTime($date);
 
-                return $date->format('Y-m-d H:i:s');
-            }
-        );
-        $this->phabric->createEntitiesFromConfig($parameters['Phabric']['entities']);
+                //return $date->format('Y-m-d H:i:s');
+            //}
+        //);
+        //$this->phabric->createEntitiesFromConfig($parameters['Phabric']['entities']);
     }
 
     /**

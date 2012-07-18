@@ -23,7 +23,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Acme": "src/"
+            "Acme": "src/",
+            "Phabric\\Behat": "src/"
         }
     },
     "minimum-stability": "dev"
