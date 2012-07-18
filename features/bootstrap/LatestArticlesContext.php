@@ -8,11 +8,6 @@ use Behat\Mink\Exception\ExpectationException;
 class LatestArticlesContext extends RawMinkContext
 {
     /**
-     * @var \Phabric\Phabric $phabric
-     */
-    private $phabric = null;
-
-    /**
      * @var \Doctrine\DBAL\Connection $connection
      */
     private $connection = null;
@@ -31,21 +26,6 @@ class LatestArticlesContext extends RawMinkContext
             'host' => $parameters['database']['host'],
             'driver' => $parameters['database']['driver'],
         ));
-
-        $dataSource = new \Phabric\Datasource\Doctrine(
-            $this->connection,
-            $parameters['Phabric']['entities']
-        );
-
-        $this->phabric = new \Phabric\Phabric($dataSource);
-        $this->phabric->addDataTransformation(
-            'TEXTTOMYSQLDATE', function($date) {
-                $date = new \DateTime($date);
-
-                return $date->format('Y-m-d H:i:s');
-            }
-        );
-        $this->phabric->createEntitiesFromConfig($parameters['Phabric']['entities']);
     }
 
     /**
@@ -57,7 +37,15 @@ class LatestArticlesContext extends RawMinkContext
      */
     public function followingArticlesWereWritten(TableNode $table)
     {
-        $this->phabric->insertFromTable('Article', $table);
+        $statement = $this->connection->prepare('INSERT INTO articles (title, content, updated_at) VALUES (?, ?, ?)');
+
+        foreach ($table->getHash() as $row) {
+            $date = new \DateTime($row['Modification time']);
+            $statement->bindValue(1, $row['Title']);
+            $statement->bindValue(2, $row['Content']);
+            $statement->bindValue(3, $date->format('Y-m-d H:i:s'));
+            $statement->execute();
+        }
     }
 
     /**
@@ -69,13 +57,13 @@ class LatestArticlesContext extends RawMinkContext
      */
     public function iShouldSeeTheArticle($title)
     {
-        $entity = $this->phabric->getEntity('Article');
-        $article = $entity->getNamedItem($title);
+        $articles = $this->connection->executeQuery('SELECT * FROM articles WHERE title = ?', array($title))
+            ->fetchAll();
 
         $xpath = sprintf('//div[contains(@class, "article")]//h2[text()="%s"]', $title);
         $this->assertXpathElementExists($xpath);
 
-        $xpath = sprintf('//div[contains(@class, "article")]//p[text()="%s"]', $article['content']);
+        $xpath = sprintf('//div[contains(@class, "article")]//p[text()="%s"]', $articles[0]['content']);
         $this->assertXpathElementExists($xpath);
     }
 
@@ -88,13 +76,13 @@ class LatestArticlesContext extends RawMinkContext
      */
     public function iShouldNotSeeTheArticle($title)
     {
-        $entity = $this->phabric->getEntity('Article');
-        $article = $entity->getNamedItem($title);
+        $articles = $this->connection->executeQuery('SELECT * FROM articles WHERE title = ?', array($title))
+            ->fetchAll();
 
         $xpath = sprintf('//div[contains(@class, "article")]//h2[text()="%s"]', $title);
         $this->assertXpathElementDoesNotExist($xpath);
 
-        $xpath = sprintf('//div[contains(@class, "article")]//p[text()="%s"]', $article['content']);
+        $xpath = sprintf('//div[contains(@class, "article")]//p[text()="%s"]', $articles[0]['content']);
         $this->assertXpathElementDoesNotExist($xpath);
     }
 
@@ -105,7 +93,6 @@ class LatestArticlesContext extends RawMinkContext
      */
     public function clearDatabase()
     {
-        $this->phabric->reset();
         $this->connection->query('DELETE FROM articles');
     }
 
