@@ -23,6 +23,5 @@
         "psr-0": {
             "Acme": "src/"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
