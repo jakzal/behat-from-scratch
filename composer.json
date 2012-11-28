@@ -2,19 +2,19 @@
     "name": "behat-from-scratch",
     "version": "1.0.0",
     "require": {
-        "silex/silex":         "*",
+        "silex/silex":         "*@dev",
         "twig/twig":           "*",
         "symfony/twig-bridge": "2.1.*",
         "symfony/form":        "2.1.*",
         "symfony/validator":   "2.1.*",
         "symfony/translation": "2.1.*",
 
-        "behat/behat":                  "*@stable",
-        "behat/mink-extension":         "*@stable",
-        "behat/mink-browserkit-driver": "*@stable",
-        "behat/mink-selenium-driver":   "*@stable",
-        "behat/mink-selenium2-driver":  "*@stable",
-        "behat/mink-sahi-driver":       "*@stable"
+        "behat/behat":                  "*",
+        "behat/mink-extension":         "*",
+        "behat/mink-browserkit-driver": "*",
+        "behat/mink-selenium-driver":   "*",
+        "behat/mink-selenium2-driver":  "*",
+        "behat/mink-sahi-driver":       "*"
     },
     "config": {
         "bin-dir": "bin/"
