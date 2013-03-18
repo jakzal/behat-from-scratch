@@ -1,0 +1,9 @@
+default:
+  formatter:
+    name: pretty
+  context:
+    class: features\bootstrap\FeatureContext
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://google.co.uk/'
+      goutte:   ~
