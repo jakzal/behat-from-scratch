@@ -60,11 +60,7 @@ class SearchContext extends RawMinkContext
     {
         $resultCount = $this->page->countResults($keywords);
 
-        if ($resultCount === 0) {
-            $message = sprintf('Expected at least one image for "%s", got: "%d"', $keywords, $resultCount);
-
-            throw new \LogicException($message);
-        }
+        expect($resultCount > 0)->toBe(true);
     }
 }
 
