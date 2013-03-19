@@ -7,3 +7,5 @@ default:
     Behat\MinkExtension\Extension:
       base_url: 'http://google.co.uk/'
       goutte:   ~
+    SensioLabs\PageObjectExtension\Extension:
+      pages_namespace: features\bootstrap\Page
