@@ -17,7 +17,7 @@ class SearchContext extends PageObjectContext
      */
     public function iVisitedTheHomepage()
     {
-        $this->page = $this->getPage('Homepage')->open('/');
+        $this->page = $this->getPage('Homepage')->open();
     }
 
     /**

@@ -10,12 +10,9 @@ use SensioLabs\PageObjectExtension\PageObject\Page;
 class SearchResultsNavigation extends Element
 {
     /**
-     * @return string
+     * @var array $selector
      */
-    protected function xpath()
-    {
-        return '//*[@id="modeselector"]//ul';
-    }
+    protected $selector =  array('xpath' => '//*[@id="modeselector"]//ul');
 
     /**
      * @param string $name

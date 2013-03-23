@@ -8,4 +8,6 @@ default:
       base_url: 'http://google.co.uk/'
       goutte:   ~
     SensioLabs\PageObjectExtension\Extension:
-      pages_namespace: features\bootstrap\Page
+      namespaces:
+        page: features\bootstrap\Page
+        element: features\bootstrap\Page\Element

@@ -9,12 +9,17 @@ use SensioLabs\PageObjectExtension\PageObject\Page;
 class Homepage extends Page
 {
     /**
+     * @var string $path
+     */
+    protected $path = '/';
+
+    /**
      * @param string $keywords
      *
      * @return Page
      */
     public function search($keywords)
     {
-        return $this->getPage('Element / Search form')->search($keywords);
+        return $this->getElement('Search form')->search($keywords);
     }
 }

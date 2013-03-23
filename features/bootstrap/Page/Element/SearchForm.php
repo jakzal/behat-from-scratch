@@ -9,12 +9,9 @@ use SensioLabs\PageObjectExtension\PageObject\Page;
 class SearchForm extends Element
 {
     /**
-     * @return string
+     * @var array $selector
      */
-    protected function xpath()
-    {
-        return '//form[@name="f"]';
-    }
+    protected $selector =  array('xpath' => '//form[@name="f"]');
 
     /**
      * @return Page

@@ -26,11 +26,11 @@ class WebSearchResults extends Page
     /**
      * @param string $name
      *
-     * @return Element
+     * @return Page
      */
     public function switchTab($name)
     {
-        return $this->getPage('Element / Search results navigation')->switchTab($name);
+        return $this->getElement('Search results navigation')->switchTab($name);
     }
 }
 

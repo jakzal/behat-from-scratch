@@ -691,12 +691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jakzal/PageObjectExtension.git",
-                "reference": "aae23fc73da99dc19d722dd31924e5f59b60c123"
+                "reference": "1c8be51763f8cf9db699aed0edc5a38774f0332c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jakzal/PageObjectExtension/zipball/aae23fc73da99dc19d722dd31924e5f59b60c123",
-                "reference": "aae23fc73da99dc19d722dd31924e5f59b60c123",
+                "url": "https://api.github.com/repos/jakzal/PageObjectExtension/zipball/1c8be51763f8cf9db699aed0edc5a38774f0332c",
+                "reference": "1c8be51763f8cf9db699aed0edc5a38774f0332c",
                 "shasum": ""
             },
             "require": {
@@ -738,7 +738,7 @@
                 "source": "https://github.com/jakzal/PageObjectExtension/tree/master",
                 "issues": "https://github.com/jakzal/PageObjectExtension/issues"
             },
-            "time": "2013-03-19 14:54:34"
+            "time": "2013-03-23 10:36:13"
         },
         {
             "name": "symfony/browser-kit",
