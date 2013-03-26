@@ -2,7 +2,7 @@
 
 namespace features\bootstrap\Page;
 
-use SensioLabs\PageObjectExtension\PageObject\Page;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
 class ImagesSearchResults extends Page
 {

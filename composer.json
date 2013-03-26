@@ -5,17 +5,11 @@
         "behat/behat": "*",
         "behat/mink-extension": "*",
         "behat/mink-goutte-driver": "*",
-        "sensiolabs/page-object-extension": "dev-master",
+        "sensiolabs/behat-page-object-extension": "dev-master",
         "phpspec/php-diff": "dev-master",
         "phpspec/phpspec2": "dev-develop",
         "bossa/phpspec2-expect": "dev-master"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/jakzal/PageObjectExtension"
-        }
-    ],
     "config": {
         "bin-dir": "bin/"
     },

@@ -2,10 +2,9 @@
 
 namespace features\bootstrap\Page\Element;
 
-use Behat\Mink\Element\ElementInterface;
 use Behat\Mink\Exception\ElementNotFoundException;
-use SensioLabs\PageObjectExtension\PageObject\Element;
-use SensioLabs\PageObjectExtension\PageObject\Page;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Element;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
 class SearchResultsNavigation extends Element
 {

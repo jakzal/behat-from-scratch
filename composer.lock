@@ -1,5 +1,5 @@
 {
-    "hash": "cc454370338c3f0ca29b87c851d0dcc0",
+    "hash": "062f4603abbce3fb68c8bd3273e29005",
     "packages": [
 
     ],
@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BossaConsulting/phpspec2-expect.git",
-                "reference": "fe8c20b65f38f2d372bd56923621413eff7b8f17"
+                "reference": "b33e65fc6d88a581a0a89b1e65fb585c2a9abc27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BossaConsulting/phpspec2-expect/zipball/fe8c20b65f38f2d372bd56923621413eff7b8f17",
-                "reference": "fe8c20b65f38f2d372bd56923621413eff7b8f17",
+                "url": "https://api.github.com/repos/BossaConsulting/phpspec2-expect/zipball/b33e65fc6d88a581a0a89b1e65fb585c2a9abc27",
+                "reference": "b33e65fc6d88a581a0a89b1e65fb585c2a9abc27",
                 "shasum": ""
             },
             "require": {
@@ -387,7 +387,7 @@
                 "spec",
                 "specification"
             ],
-            "time": "2012-11-14 14:47:24"
+            "time": "2013-03-20 15:08:48"
         },
         {
             "name": "fabpot/goutte",
@@ -686,17 +686,17 @@
             "time": "2013-03-13 16:01:59"
         },
         {
-            "name": "sensiolabs/page-object-extension",
+            "name": "sensiolabs/behat-page-object-extension",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jakzal/PageObjectExtension.git",
-                "reference": "bee908d6730ef3d5fd16c43fe1b4dda683435f37"
+                "url": "https://github.com/sensiolabs/BehatPageObjectExtension.git",
+                "reference": "529bf0e5060f5da272dd2022fccaee93fde1788e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jakzal/PageObjectExtension/zipball/bee908d6730ef3d5fd16c43fe1b4dda683435f37",
-                "reference": "bee908d6730ef3d5fd16c43fe1b4dda683435f37",
+                "url": "https://api.github.com/repos/sensiolabs/BehatPageObjectExtension/zipball/529bf0e5060f5da272dd2022fccaee93fde1788e",
+                "reference": "529bf0e5060f5da272dd2022fccaee93fde1788e",
                 "shasum": ""
             },
             "require": {
@@ -711,9 +711,10 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "SensioLabs\\PageObjectExtension\\": "src/"
+                    "SensioLabs\\Behat\\PageObjectExtension\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -728,17 +729,13 @@
                 }
             ],
             "description": "Page object extension for Behat",
-            "homepage": "https://github.com/sensio/PageObjectExtension",
+            "homepage": "https://github.com/sensiolabs/BehatPageObjectExtension",
             "keywords": [
-                "bdd",
-                "behat",
+                "BDD",
+                "Behat",
                 "page"
             ],
-            "support": {
-                "source": "https://github.com/jakzal/PageObjectExtension/tree/master",
-                "issues": "https://github.com/jakzal/PageObjectExtension/issues"
-            },
-            "time": "2013-03-26 12:03:33"
+            "time": "2013-03-26 16:36:22"
         },
         {
             "name": "symfony/browser-kit",
@@ -1300,7 +1297,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sensiolabs/page-object-extension": 20,
+        "sensiolabs/behat-page-object-extension": 20,
         "phpspec/php-diff": 20,
         "phpspec/phpspec2": 20,
         "bossa/phpspec2-expect": 20

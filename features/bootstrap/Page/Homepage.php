@@ -3,8 +3,8 @@
 namespace features\bootstrap\Page;
 
 use features\bootstrap\Page\Element\SearchFormElement;
-use SensioLabs\PageObjectExtension\PageObject\Exception\UnexpectedPageException;
-use SensioLabs\PageObjectExtension\PageObject\Page;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Exception\UnexpectedPageException;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
 class Homepage extends Page
 {

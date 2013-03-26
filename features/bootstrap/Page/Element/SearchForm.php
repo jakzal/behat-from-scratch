@@ -2,8 +2,8 @@
 
 namespace features\bootstrap\Page\Element;
 
-use SensioLabs\PageObjectExtension\PageObject\Element;
-use SensioLabs\PageObjectExtension\PageObject\Page;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Element;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
 
 class SearchForm extends Element

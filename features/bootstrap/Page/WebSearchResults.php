@@ -2,8 +2,7 @@
 
 namespace features\bootstrap\Page;
 
-use SensioLabs\PageObjectExtension\PageObject\Page;
-use features\bootstrap\Page\Element\SearchResultsNavigation;
+use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
 class WebSearchResults extends Page
 {

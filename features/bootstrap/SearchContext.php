@@ -2,22 +2,16 @@
 
 namespace features\bootstrap;
 
-use SensioLabs\PageObjectExtension\Context\PageObjectContext;
-use Behat\Mink\Element\ElementInterface;
+use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
 
 class SearchContext extends PageObjectContext
 {
-    /**
-     * @var ElementInterface $page
-     */
-    private $page = null;
-
     /**
      * @Given /^(?:|I )visited (?:|the )homepage$/
      */
     public function iVisitedTheHomepage()
     {
-        $this->page = $this->getPage('Homepage')->open();
+        $this->getPage('Homepage')->open();
     }
 
     /**
@@ -25,7 +19,7 @@ class SearchContext extends PageObjectContext
      */
     public function iSearchFor($keywords)
     {
-        $this->page = $this->page->search($keywords);
+        $this->getPage('Homepage')->search($keywords);
     }
 
     /**
@@ -33,7 +27,7 @@ class SearchContext extends PageObjectContext
      */
     public function iShouldSeeAListOfWebsites($keywords)
     {
-        $resultCount = $this->page->countResults($keywords);
+        $resultCount = $this->getPage('Web search results')->countResults($keywords);
 
         expect($resultCount > 0)->toBe(true);
     }
@@ -43,7 +37,7 @@ class SearchContext extends PageObjectContext
      */
     public function iChangeTheTabTo($tab)
     {
-        $this->page = $this->page->switchTab($tab);
+        $this->getPage('Web search results')->switchTab($tab);
     }
 
     /**
@@ -51,7 +45,7 @@ class SearchContext extends PageObjectContext
      */
     public function iShouldSeeAListOfImages($keywords)
     {
-        $resultCount = $this->page->countResults($keywords);
+        $resultCount = $this->getPage('Images search results')->countResults($keywords);
 
         expect($resultCount > 0)->toBe(true);
     }
