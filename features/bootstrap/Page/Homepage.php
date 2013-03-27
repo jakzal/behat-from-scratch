@@ -14,13 +14,24 @@ class Homepage extends Page
     protected $path = '/';
 
     /**
+     * @var array $elements
+     */
+    protected $elements = array(
+        'Search form' => array('xpath' => '//form[@name="f"]')
+    );
+
+    /**
      * @param string $keywords
      *
      * @return Page
      */
     public function search($keywords)
     {
-        return $this->getElement('Search form')->search($keywords);
+        $element = $this->getElement('Search form');
+        $element->fillField('q', $keywords);
+        $element->pressButton('Google Search');
+
+        return $this->getPage('Web search results');
     }
 
     /**

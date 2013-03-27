@@ -691,12 +691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/BehatPageObjectExtension.git",
-                "reference": "529bf0e5060f5da272dd2022fccaee93fde1788e"
+                "reference": "27e7afaa8015bf1e98b1aeb28b321f040f8c2031"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/BehatPageObjectExtension/zipball/529bf0e5060f5da272dd2022fccaee93fde1788e",
-                "reference": "529bf0e5060f5da272dd2022fccaee93fde1788e",
+                "url": "https://api.github.com/repos/sensiolabs/BehatPageObjectExtension/zipball/27e7afaa8015bf1e98b1aeb28b321f040f8c2031",
+                "reference": "27e7afaa8015bf1e98b1aeb28b321f040f8c2031",
                 "shasum": ""
             },
             "require": {
@@ -735,7 +735,7 @@
                 "Behat",
                 "page"
             ],
-            "time": "2013-03-26 16:36:22"
+            "time": "2013-03-27 16:53:06"
         },
         {
             "name": "symfony/browser-kit",
