@@ -5,7 +5,7 @@
         "behat/behat": "*",
         "behat/mink-extension": "*",
         "behat/mink-goutte-driver": "*",
-        "sensiolabs/behat-page-object-extension": "dev-master",
+        "sensiolabs/behat-page-object-extension": "*",
         "phpspec/php-diff": "dev-master",
         "phpspec/phpspec2": "dev-develop",
         "bossa/phpspec2-expect": "dev-master"
