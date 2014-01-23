@@ -3,17 +3,26 @@ language: php
 php:
   - 5.3
   - 5.4
+  - 5.5
+  - hhvm
+
+matrix:
+    allow_failures:
+        - php: hhvm
 
 env:
   - BEHAT_PARAMS="formatter[name]=pretty"
 
+install:
+  - sudo apt-get install parallel
+
 before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
-  - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar -Oselenium-server-standalone.jar
   - ./tools/travis/selenium.sh start
 
-script: php bin/behat
+script:
+  - find features/ -iname '*.feature' | parallel --gnu ./bin/behat
 
 after_script:
   - ./tools/travis/selenium.sh stop
