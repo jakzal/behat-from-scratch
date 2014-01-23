@@ -15,7 +15,7 @@ start_hub() {
 }
 
 start_nodes() {
-  nodes=$((which nproc && nproc) || sysctl -n hw.ncpu)
+  nodes=$( [ $(which nproc) ] && nproc || sysctl -n hw.ncpu)
   for i in $(seq 1 $nodes); do
     echo "Starting node "$i
     port=$(expr 5555 + $i)
