@@ -10,7 +10,7 @@ download() {
 
 start_hub() {
   echo "Starting the hub"
-  java -jar selenium-server-standalone.jar -role hub &> /dev/null &
+  java -jar selenium-server-standalone.jar -role hub > /dev/null 2>&1 &
 }
 
 start_nodes() {
@@ -18,7 +18,7 @@ start_nodes() {
   for i in $(seq 1 $nodes); do
     port=$(expr 5557 + $i)
     echo "Starting node "$i
-    java -jar selenium-server-standalone.jar -role node -port $port -browser browserName=phantomjs &> /dev/null &
+    java -jar selenium-server-standalone.jar -role node -port $port -browser browserName=phantomjs > /dev/null 2>&1 &
     sleep 1
   done
 }
