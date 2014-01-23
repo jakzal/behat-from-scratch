@@ -11,7 +11,7 @@ class SearchResultsNavigation extends Element
     /**
      * @var array $selector
      */
-    protected $selector =  array('xpath' => '//*[@id="modeselector"]//ul');
+    protected $selector = array('xpath' => '//div[@class="tn"]');
 
     /**
      * @param string $name
