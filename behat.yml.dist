@@ -1,6 +1,6 @@
 default:
   formatter:
-    name: pretty
+    name: progress
   context:
     class: features\bootstrap\FeatureContext
   extensions:

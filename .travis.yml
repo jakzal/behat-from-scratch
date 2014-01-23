@@ -10,9 +10,6 @@ matrix:
     allow_failures:
         - php: hhvm
 
-env:
-  - BEHAT_PARAMS="formatter[name]=pretty"
-
 install:
   - sudo apt-get install parallel
 
