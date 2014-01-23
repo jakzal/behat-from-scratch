@@ -11,14 +11,9 @@ before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
   - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar -Oselenium-server-standalone.jar
-  - java -jar selenium-server-standalone.jar -role hub &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5557 -browser browserName=phantomjs &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5558 -browser browserName=phantomjs &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5559 -browser browserName=phantomjs &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5560 -browser browserName=phantomjs &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5561 -browser browserName=phantomjs &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5562 -browser browserName=phantomjs &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5563 -browser browserName=phantomjs &> /dev/null &
-  - java -jar selenium-server-standalone.jar -role node -port 5564 -browser browserName=phantomjs &> /dev/null &
+  - ./tools/travis/selenium.sh start
 
 script: php bin/behat
+
+after_script:
+  - ./tools/travis/selenium.sh stop
