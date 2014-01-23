@@ -15,10 +15,10 @@ start_hub() {
 }
 
 start_nodes() {
-  nodes=$(sysctl -n hw.ncpu || ( [ -e /proc/cpuinfo ] && grep "^processor" /proc/cpuinfo | wc -l ))
+  nodes=$((which nproc && nproc) || sysctl -n hw.ncpu)
   for i in $(seq 1 $nodes); do
-    port=$(expr 5557 + $i)
     echo "Starting node "$i
+    port=$(expr 5555 + $i)
     java -jar selenium-server-standalone.jar -role node -port $port $NODE_OPTIONS > /dev/null 2>&1 &
     sleep 1
   done
