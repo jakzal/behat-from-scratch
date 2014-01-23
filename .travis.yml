@@ -22,7 +22,7 @@ before_script:
   - ./tools/travis/selenium.sh start
 
 script:
-  - find features/ -iname '*.feature' | parallel --gnu ./bin/behat
+  - find features/ -iname '*.feature' | parallel --gnu ./bin/behat || exit 1
 
 after_script:
   - ./tools/travis/selenium.sh stop
