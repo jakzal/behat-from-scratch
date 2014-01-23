@@ -41,7 +41,7 @@ class Homepage extends Page
     {
         $title = $this->find('css', 'title');
 
-        if (null === $title || 'Google' !== $title->getText()) {
+        if (null === $title || 'Google' !== $title->getHtml()) {
             throw new UnexpectedPageException('Expected to be on a google homepage');
         }
     }

@@ -6,5 +6,11 @@ default:
   extensions:
     Behat\MinkExtension\Extension:
       base_url: 'http://google.co.uk/'
+      javascript_session: selenium2
       goutte:   ~
+      browser_name: phantomjs
+      selenium2:
+        wd_host: http://127.0.0.2:4444/wd/hub
+        capabilities:
+          version: ''
     SensioLabs\Behat\PageObjectExtension\Extension: ~
