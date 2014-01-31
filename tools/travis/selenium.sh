@@ -9,25 +9,9 @@ download() {
   [ -f selenium-server-standalone.jar ] || wget http://selenium.googlecode.com/files/selenium-server-standalone-${SELENIUM_VERSION}.jar -Oselenium-server-standalone.jar
 }
 
-start_hub() {
-  echo "Starting the hub"
-  java -jar selenium-server-standalone.jar -role hub > /dev/null 2>&1 &
-}
-
-start_nodes() {
-  nodes=$( [ $(which nproc) ] && nproc || sysctl -n hw.ncpu)
-  for i in $(seq 1 $nodes); do
-    echo "Starting node "$i
-    port=$(expr 5555 + $i)
-    java -jar selenium-server-standalone.jar -role node -port $port $NODE_OPTIONS > /dev/null 2>&1 &
-    sleep 1
-  done
-}
-
 start() {
   download
-  start_hub
-  start_nodes
+  java -jar selenium-server-standalone.jar > /dev/null 2>&1 &
 }
 
 stop() {
