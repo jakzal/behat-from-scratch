@@ -1,7 +1,7 @@
 default:
   suites:
     search:
-      contexts: [ SearchContext ]
+      contexts: [ Context\SearchContext ]
   formatters:
     pretty: ~
   extensions:
