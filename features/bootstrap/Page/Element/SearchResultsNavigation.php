@@ -1,6 +1,6 @@
 <?php
 
-namespace features\bootstrap\Page\Element;
+namespace Page\Element;
 
 use Behat\Mink\Exception\ElementNotFoundException;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Element;

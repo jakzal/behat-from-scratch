@@ -1,6 +1,6 @@
 <?php
 
-namespace features\bootstrap\Page;
+namespace Page;
 
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 

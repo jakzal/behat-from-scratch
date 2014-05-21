@@ -1,10 +1,11 @@
 default:
-  formatter:
-    name: pretty
-  context:
-    class: features\bootstrap\FeatureContext
+  suites:
+    search:
+      contexts: [ SearchContext ]
+  formatters:
+    pretty: ~
   extensions:
-    Behat\MinkExtension\Extension:
+    Behat\MinkExtension:
       base_url: 'http://google.co.uk/'
       goutte:   ~
-    SensioLabs\Behat\PageObjectExtension\Extension: ~
+    SensioLabs\Behat\PageObjectExtension: ~

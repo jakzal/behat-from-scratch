@@ -1,7 +1,5 @@
 <?php
 
-namespace features\bootstrap;
-
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
 
 class SearchContext extends PageObjectContext

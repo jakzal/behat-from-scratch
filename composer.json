@@ -2,19 +2,20 @@
     "name": "behat-from-scratch",
     "version": "2.0.0",
     "require-dev": {
-        "behat/behat": "~2.5",
-        "behat/mink-extension": "~1.2",
+        "behat/behat": "~3.0",
+        "behat/mink-extension": "~2.0@dev",
         "behat/mink-goutte-driver": "~1.0",
-        "sensiolabs/behat-page-object-extension": "~1.0",
-        "phpspec/phpspec": "~2.0@dev",
-        "bossa/phpspec2-expect": "~1.0@dev"
+        "sensiolabs/behat-page-object-extension": "dev-behat-3-update",
+        "phpspec/phpspec": "~2.0",
+        "bossa/phpspec2-expect": "~1.0"
     },
     "config": {
         "bin-dir": "bin/"
     },
-    "autoload": {
-        "psr-0": {
-            "features": "features/"
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:jakzal/BehatPageObjectExtension.git"
         }
-    }
+    ]
 }

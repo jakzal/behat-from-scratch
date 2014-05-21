@@ -1,6 +1,6 @@
 <?php
 
-namespace features\bootstrap\Page;
+namespace Page;
 
 use features\bootstrap\Page\Element\SearchFormElement;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Exception\UnexpectedPageException;
