@@ -5,17 +5,12 @@
         "behat/behat": "~3.0",
         "behat/mink-extension": "~2.0@dev",
         "behat/mink-goutte-driver": "~1.0",
-        "sensiolabs/behat-page-object-extension": "dev-behat-3-update",
+        "sensiolabs/behat-page-object-extension": "dev-master",
         "phpspec/phpspec": "~2.0",
-        "bossa/phpspec2-expect": "~1.0"
+        "bossa/phpspec2-expect": "~1.0",
+        "ocramius/proxy-manager": "~0.5"
     },
     "config": {
         "bin-dir": "bin/"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:jakzal/BehatPageObjectExtension.git"
-        }
-    ]
+    }
 }

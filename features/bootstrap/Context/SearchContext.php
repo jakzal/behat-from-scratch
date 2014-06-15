@@ -2,16 +2,44 @@
 
 namespace Context;
 
-use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
+use Behat\Behat\Context\Context;
+use Page\Homepage;
+use Page\ImagesSearchResults;
+use Page\WebSearchResults;
 
-class SearchContext extends PageObjectContext
+class SearchContext implements Context
 {
+    /**
+     * @var Homepage
+     */
+    private $homepage;
+
+    /**
+     * @var WebSearchResults
+     */
+    private $webSearchResults;
+
+    /**
+     * @var ImagesSearchResults
+     */
+    private $imagesSearchResults;
+
+    /**
+     * @param Homepage         $homepage
+     * @param WebSearchResults $webSearchResults
+     */
+    public function __construct(Homepage $homepage, WebSearchResults $webSearchResults, ImagesSearchResults $imagesSearchResults)
+    {
+        $this->homepage = $homepage;
+        $this->webSearchResults = $webSearchResults;
+        $this->imagesSearchResults = $imagesSearchResults;
+    }
     /**
      * @Given /^(?:|I )visited (?:|the )homepage$/
      */
     public function iVisitedTheHomepage()
     {
-        $this->getPage('Homepage')->open();
+        $this->homepage->open();
     }
 
     /**
@@ -19,7 +47,7 @@ class SearchContext extends PageObjectContext
      */
     public function iSearchFor($keywords)
     {
-        $this->getPage('Homepage')->search($keywords);
+        $this->homepage->search($keywords);
     }
 
     /**
@@ -27,7 +55,7 @@ class SearchContext extends PageObjectContext
      */
     public function iShouldSeeAListOfWebsites($keywords)
     {
-        $resultCount = $this->getPage('Web search results')->countResults($keywords);
+        $resultCount = $this->webSearchResults->countResults($keywords);
 
         expect($resultCount > 0)->toBe(true);
     }
@@ -37,7 +65,7 @@ class SearchContext extends PageObjectContext
      */
     public function iChangeTheTabTo($tab)
     {
-        $this->getPage('Web search results')->switchTab($tab);
+        $this->webSearchResults->switchTab($tab);
     }
 
     /**
@@ -45,7 +73,7 @@ class SearchContext extends PageObjectContext
      */
     public function iShouldSeeAListOfImages($keywords)
     {
-        $resultCount = $this->getPage('Images search results')->countResults($keywords);
+        $resultCount = $this->imagesSearchResults->countResults($keywords);
 
         expect($resultCount > 0)->toBe(true);
     }
