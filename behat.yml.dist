@@ -5,7 +5,6 @@ default:
   formatters:
     pretty: ~
   extensions:
-    Behat\MinkExtension:
-      base_url: 'http://www.google.co.uk/'
-      goutte:   ~
-    SensioLabs\Behat\PageObjectExtension: ~
+    Zalas\Behat\NoExtension:
+      imports:
+        - features/config/services.yml

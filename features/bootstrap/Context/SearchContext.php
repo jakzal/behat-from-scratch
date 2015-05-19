@@ -3,79 +3,59 @@
 namespace Context;
 
 use Behat\Behat\Context\Context;
-use Page\Homepage;
-use Page\ImagesSearchResults;
-use Page\WebSearchResults;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Message\ResponseInterface;
 
 class SearchContext implements Context
 {
     /**
-     * @var Homepage
+     * @var ClientInterface
      */
-    private $homepage;
+    private $httpClient;
 
     /**
-     * @var WebSearchResults
+     * @var ResponseInterface
      */
-    private $webSearchResults;
+    private $lastResponse;
 
     /**
-     * @var ImagesSearchResults
+     * @param ClientInterface $httpClient
      */
-    private $imagesSearchResults;
-
-    /**
-     * @param Homepage         $homepage
-     * @param WebSearchResults $webSearchResults
-     */
-    public function __construct(Homepage $homepage, WebSearchResults $webSearchResults, ImagesSearchResults $imagesSearchResults)
+    public function __construct(ClientInterface $httpClient)
     {
-        $this->homepage = $homepage;
-        $this->webSearchResults = $webSearchResults;
-        $this->imagesSearchResults = $imagesSearchResults;
-    }
-    /**
-     * @Given /^(?:|I )visited (?:|the )homepage$/
-     */
-    public function iVisitedTheHomepage()
-    {
-        $this->homepage->open();
+        $this->httpClient = $httpClient;
     }
 
     /**
-     * @When /^(?:|I )search for "(?P<keywords>[^"]*)"$/
+     * @When I search for :postcode
      */
-    public function iSearchFor($keywords)
+    public function iSearchFor($postcode)
     {
-        $this->homepage->search($keywords);
+        $this->lastResponse = $this->httpClient->get('http://api.postcodes.io/postcodes/'.$postcode, ['exceptions' => false]);
     }
 
     /**
-     * @Then /^(?:|I )should see (?:|a )list of "(?P<keywrods>[^"]*)" websites$/
+     * @Then I should see its location
      */
-    public function iShouldSeeAListOfWebsites($keywords)
+    public function iShouldSeeItsLocation()
     {
-        $resultCount = $this->webSearchResults->countResults($keywords);
+        $json = $this->lastResponse->json();
 
-        expect($resultCount > 0)->toBe(true);
+        \PHPUnit_Framework_Assert::assertSame(200, $this->lastResponse->getStatusCode(), 'Got a successful response');
+        \PHPUnit_Framework_Assert::assertInternalType('array', $json, 'Response contains a query result');
+        \PHPUnit_Framework_Assert::arrayHasKey('result', $json, 'Result found in the response');
+        \PHPUnit_Framework_Assert::assertArrayHasKey('latitude', $json['result'], 'Latitude found in the response');
+        \PHPUnit_Framework_Assert::assertArrayHasKey('longitude', $json['result'], 'Longitude found in the response');
+        \PHPUnit_Framework_Assert::assertInternalType('double', $json['result']['latitude'], 'Latitude is a double');
+        \PHPUnit_Framework_Assert::assertInternalType('double', $json['result']['longitude'], 'Longitude is a double');
     }
 
-    /**
-     * @When /^(?:|I )change (?:|the )tab to "(?P<tab>[^"]*)"$/
-     */
-    public function iChangeTheTabTo($tab)
-    {
-        $this->webSearchResults->switchTab($tab);
-    }
 
     /**
-     * @Then /^(?:|I )should see (?:|a )list of "(?P<keywords>[^"]*)" images$/
+     * @Then I should be informed the postcode was not found
      */
-    public function iShouldSeeAListOfImages($keywords)
+    public function iShouldBeInformedThePostcodeWasNotFound()
     {
-        $resultCount = $this->imagesSearchResults->countResults($keywords);
-
-        expect($resultCount > 0)->toBe(true);
+        \PHPUnit_Framework_Assert::assertSame(404, $this->lastResponse->getStatusCode(), '404 Not Found');
     }
 }
-

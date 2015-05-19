@@ -1,7 +1,7 @@
 Behat from Scratch
 ==================
 
-[![Build Status](https://secure.travis-ci.org/jakzal/behat-from-scratch.png?branch=page-object-extension)](http://travis-ci.org/jakzal/behat-from-scratch)
+[![Build Status](https://secure.travis-ci.org/jakzal/behat-from-scratch.png?branch=no-extension)](http://travis-ci.org/jakzal/behat-from-scratch)
 
 Installation
 ------------
@@ -15,5 +15,5 @@ curl -s http://getcomposer.org/installer | php
 Install the dependencies:
 
 ```bash
-php composer.phar install --dev
+php composer.phar install
 ```

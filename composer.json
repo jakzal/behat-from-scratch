@@ -1,14 +1,12 @@
 {
     "name": "behat-from-scratch",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "require-dev": {
+        "php": "~5.5",
         "behat/behat": "~3.0",
-        "behat/mink-extension": "~2.0@dev",
-        "behat/mink-goutte-driver": "~1.0",
-        "sensiolabs/behat-page-object-extension": "dev-master",
-        "phpspec/phpspec": "~2.0",
-        "bossa/phpspec2-expect": "~1.0",
-        "ocramius/proxy-manager": "~0.5"
+        "zalas/behat-no-extension": "~1.0",
+        "phpunit/phpunit": "~4.0",
+        "guzzlehttp/guzzle": "~5.2"
     },
     "config": {
         "bin-dir": "bin/"
