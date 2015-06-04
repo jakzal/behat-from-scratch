@@ -5,6 +5,4 @@ default:
   formatters:
     pretty: ~
   extensions:
-    Zalas\Behat\NoExtension:
-      imports:
-        - features/config/services.yml
+    Zalas\Behat\RestExtension: ~

@@ -6,8 +6,15 @@
         "behat/behat": "~3.0",
         "zalas/behat-no-extension": "~1.0",
         "phpunit/phpunit": "~4.0",
-        "guzzlehttp/guzzle": "~5.2"
+        "guzzlehttp/guzzle": "~6.0",
+        "zalas/behat-rest-extension": "dev-feature/http-client"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jakzal/BehatRestExtension"
+        }
+    ],
     "config": {
         "bin-dir": "bin/"
     }
