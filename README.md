@@ -6,14 +6,9 @@ Behat from Scratch
 Installation
 ------------
 
-Download [the composer](http://getcomposer.org/):
-
-```bash
-curl -s http://getcomposer.org/installer | php
-```
-
 Install the dependencies:
 
 ```bash
-php composer.phar install --dev
+composer install
 ```
+

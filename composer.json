@@ -1,6 +1,9 @@
 {
     "name": "zalas/behat-from-scratch",
     "version": "2.0.0",
+    "require": {
+        "php": "^7.4"
+    },
     "require-dev": {
         "behat/behat": "^3.5",
         "behat/mink-extension": "^2.3",
