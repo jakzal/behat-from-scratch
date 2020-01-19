@@ -2,7 +2,7 @@
 
 namespace Page;
 
-use features\bootstrap\Page\Element\SearchFormElement;
+use Page\Element\SearchFormElement;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Exception\UnexpectedPageException;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 

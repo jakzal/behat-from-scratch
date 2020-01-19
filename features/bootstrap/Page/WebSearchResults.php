@@ -14,7 +14,7 @@ class WebSearchResults extends Page
     public function countResults($keywords)
     {
         $xpath = sprintf(
-            '//h3[contains(translate(.,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "%s") and @class="r"]/a',
+            '//div[contains(translate(.,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "%s")]/a',
             strtoupper($keywords)
         );
         $results = $this->findAll('xpath', $xpath);

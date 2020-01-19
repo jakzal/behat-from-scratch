@@ -14,9 +14,9 @@ class ImagesSearchResults extends Page
     public function countResults($keywords)
     {
         $xpath = sprintf(
-            '//table[@class="images_table"]'.
+            '//table'.
             '//a/img/..'.
-            '/following-sibling::b[contains(translate(.,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "%s")]',
+            '/following-sibling::*[contains(translate(.,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "%s")]',
             strtoupper($keywords)
         );
         $results = $this->findAll('xpath', $xpath);

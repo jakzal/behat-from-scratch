@@ -6,6 +6,6 @@ default:
     pretty: ~
   extensions:
     Behat\MinkExtension:
-      base_url: 'http://www.google.co.uk/'
+      base_url: 'https://www.google.co.uk/'
       goutte:   ~
     SensioLabs\Behat\PageObjectExtension: ~

@@ -1,14 +1,14 @@
 {
-    "name": "behat-from-scratch",
+    "name": "zalas/behat-from-scratch",
     "version": "2.0.0",
     "require-dev": {
-        "behat/behat": "~3.0",
-        "behat/mink-extension": "~2.0@dev",
-        "behat/mink-goutte-driver": "~1.0",
-        "sensiolabs/behat-page-object-extension": "dev-master",
-        "phpspec/phpspec": "~2.0",
-        "bossa/phpspec2-expect": "~1.0",
-        "ocramius/proxy-manager": "~0.5"
+        "behat/behat": "^3.5",
+        "behat/mink-extension": "^2.3",
+        "behat/mink-goutte-driver": "^1.2",
+        "sensiolabs/behat-page-object-extension": "^2.3",
+        "phpspec/phpspec": "^6.1",
+        "bossa/phpspec2-expect": "^3.1",
+        "ocramius/proxy-manager": "^2.6"
     },
     "config": {
         "bin-dir": "bin/"
